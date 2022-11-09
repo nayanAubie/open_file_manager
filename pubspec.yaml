@@ -1,6 +1,7 @@
 name: open_file_manager
 description: A flutter plugin to open default file manager app
 version: 0.0.1
+homepage: https://github.com/nayanAubie/open_file_manager
 repository: https://github.com/nayanAubie/open_file_manager
 
 environment:
