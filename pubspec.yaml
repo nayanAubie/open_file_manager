@@ -1,5 +1,5 @@
 name: open_file_manager
-description: A flutter plugin to open default file manager app
+description: A flutter plugin to open default file manager app. on an Android, it opens Download folder on selected file manager app. on iOS, it opens app folder in default Files app.
 version: 0.0.1
 homepage: https://github.com/nayanAubie/open_file_manager
 repository: https://github.com/nayanAubie/open_file_manager
