@@ -12,15 +12,14 @@ class MockOpenFileManagerPlatform
 }
 
 void main() {
-  final OpenFileManagerPlatform initialPlatform =
-      OpenFileManagerPlatform.instance;
+  final initialPlatform = OpenFileManagerPlatform.instance;
 
   test('$MethodChannelOpenFileManager is the default instance', () {
     expect(initialPlatform, isInstanceOf<MethodChannelOpenFileManager>());
   });
 
   test('getPlatformVersion', () async {
-    MockOpenFileManagerPlatform fakePlatform = MockOpenFileManagerPlatform();
+    final fakePlatform = MockOpenFileManagerPlatform();
     OpenFileManagerPlatform.instance = fakePlatform;
 
     expect(await openFileManager(), true);
