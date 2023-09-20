@@ -33,8 +33,11 @@ openFileManager();
 
 ## Preview
 
-https://github.com/nayanAubie/open_file_manager/assets/109264909/8d4997c7-1dd7-4716-952c-fdcb2ed8b767
+![Open file manager - Android](https://github.com/nayanAubie/open_file_manager/assets/109264909/06d453c4-2ab1-4aa3-99aa-b8ef3db33843)
 
-https://github.com/nayanAubie/open_file_manager/assets/109264909/f5cc61e2-3f7c-4415-b802-e0229ed0974e
+![Open file manager - iOS](https://github.com/nayanAubie/open_file_manager/assets/109264909/9dd7f9d6-ae6d-4638-8c3e-7ba3bd9badf7)
+
+
+
 
 
