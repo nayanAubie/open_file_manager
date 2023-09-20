@@ -11,3 +11,7 @@
 - Upgrade platform related files.
 - Upgrade kotlin version to "1.9.10"
 - Upgrade iOS deployment target to "12"
+
+## 0.0.4
+
+- Upload preview
