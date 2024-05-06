@@ -8,7 +8,11 @@ class MockOpenFileManagerPlatform
     with MockPlatformInterfaceMixin
     implements OpenFileManagerPlatform {
   @override
-  Future<bool> openFileManager() => Future.value(true);
+  Future<bool> openFileManager({
+    AndroidConfig? androidConfig,
+    IosConfig? iosConfig,
+  }) =>
+      Future.value(true);
 }
 
 void main() {

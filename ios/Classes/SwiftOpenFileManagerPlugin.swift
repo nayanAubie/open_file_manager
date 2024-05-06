@@ -13,14 +13,19 @@ public class SwiftOpenFileManagerPlugin: NSObject, FlutterPlugin {
             result(FlutterMethodNotImplemented)
             return
         }
-        let path = getDocumentsDirectory().absoluteString.replacingOccurrences(of: "file://", with: "shareddocuments://")
-        let url = URL(string: path)!
-        UIApplication.shared.open(url)
-    }
-    
-    private func getDocumentsDirectory() -> URL {
+        
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]
-        return documentsDirectory
+        
+        guard let arguments = call.arguments as? [String: Any] else {
+                  result(FlutterError(code: "INVALID_ARGUMENTS", message: "Arguments must be a map", details: nil))
+                  return
+                }
+        
+        let subFolderPath = arguments["subFolderPath"] as? String
+        
+        var path = documentsDirectory.absoluteString.replacingOccurrences(of: "file://", with: "shareddocuments://")
+        path.append(subFolderPath ?? "")
+        UIApplication.shared.open(URL(string: path)!)
     }
 }

@@ -8,12 +8,14 @@ A flutter plugin to open the default file manager app.
 ## How it works?
 
 ### Android
+The `Android` app can open either `Recent` folder or `Download` folder.
 The plugin will show the available file manager apps in the bottom popup and you can select one app to open.
-That app will open with the `Download` folder which is a public folder.
+That app will open with the given folder in selected app.
 
 ### iOS
-Plugin will open the `Files` app in iOS. You need to add the following code snippet in `Info.plist` to view your app folder inside `On My iPhone`.
-Also, you need to save at least one file to view your app's folder
+The `iOS` app can open app's document folder and it's sub directory if provided.
+Plugin will open the `Files` app in iOS. You need to add the following code snippet in `Info.plist` to view your app's document folder inside `On My iPhone`.
+Also, you need to save at least one file to view your app's folder.
 
 ```xml
 <key>UISupportsDocumentBrowser</key>  
@@ -22,13 +24,24 @@ Also, you need to save at least one file to view your app's folder
   
 ## Usage
 
-It's a very simple to use. There is only one line of code!!!
+It's a very simple to use. Just call the below method and add `config` if required.
  
  ```dart
  import 'package:open_file_manager/open_file_manager.dart'
 
-openFileManager();
+openFileManager(
+    androidConfig: AndroidConfig(
+        folderType: FolderType.recent,
+    ),
+    iosConfig: IosConfig(
+        // Path is case-sensitive here.
+        subFolderPath: 'Pictures/Screenshots',
+    ),
+);
  ```
+
+ - If `androidConfig` doesn't provided, Android app will open `Download` folder by default.
+ - If `iosConfig` doesn't provided, iOS app will open app's document folder by default.
 
 
 ## Preview

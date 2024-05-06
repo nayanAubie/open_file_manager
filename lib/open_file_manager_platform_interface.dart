@@ -1,5 +1,6 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
+import 'open_file_manager.dart';
 import 'open_file_manager_method_channel.dart';
 
 abstract class OpenFileManagerPlatform extends PlatformInterface {
@@ -23,7 +24,10 @@ abstract class OpenFileManagerPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<bool> openFileManager() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
+  Future<bool> openFileManager({
+    AndroidConfig? androidConfig,
+    IosConfig? iosConfig,
+  }) {
+    throw UnimplementedError('openFileManager() has not been implemented.');
   }
 }

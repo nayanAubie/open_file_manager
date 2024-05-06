@@ -15,3 +15,7 @@
 ## 0.0.4
 
 - Upload preview
+
+## 1.0.0
+
+- Added support of opening `Recent` folder in `Android` and any `sub-folder` inside app's document in `iOS`
