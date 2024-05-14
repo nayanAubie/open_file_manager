@@ -1,10 +1,14 @@
-## 0.0.1
+## 1.0.1
 
-- Initial release.
+- Added videos in `Preview`
 
-## 0.0.2
+## 1.0.0
 
-- Update description
+- Added support of opening `Recent` folder in `Android` and any `sub-folder` inside app's document in `iOS`
+
+## 0.0.4
+
+- Upload preview
 
 ## 0.0.3
 
@@ -12,10 +16,10 @@
 - Upgrade kotlin version to "1.9.10"
 - Upgrade iOS deployment target to "12"
 
-## 0.0.4
+## 0.0.2
 
-- Upload preview
+- Update description
 
-## 1.0.0
+## 0.0.1
 
-- Added support of opening `Recent` folder in `Android` and any `sub-folder` inside app's document in `iOS`
+- Initial release.
