@@ -46,11 +46,6 @@ openFileManager(
 
 ## Preview
 
-<video src="Screenshots/Open-File-Manager-Android.mov"></video>
+https://github.com/nayanAubie/open_file_manager/assets/109264909/57ecd7be-a526-45d8-a138-7ca7dcd255ca
 
-<video src="Screenshots/Open-Files-iOS.mov"></video>
-
-
-
-
-
+https://github.com/nayanAubie/open_file_manager/assets/109264909/862bf858-49f1-4c4d-8c8e-22cbafb1d33c
