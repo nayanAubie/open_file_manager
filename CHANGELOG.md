@@ -1,3 +1,7 @@
+## 1.0.2
+
+- Updated `Flutter linter` & `Dart analysis`.
+
 ## 1.0.1
 
 - Added videos in `Preview`
