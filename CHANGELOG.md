@@ -1,3 +1,7 @@
+## 1.0.3
+
+- Added namespace in `android/build.gradle` to support new Gradle versions.
+
 ## 1.0.2
 
 - Updated `Flutter linter` & `Dart analysis`.
