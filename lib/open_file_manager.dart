@@ -1,4 +1,4 @@
-library open_file_manager;
+library;
 
 import 'open_file_manager_platform_interface.dart';
 
