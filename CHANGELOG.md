@@ -1,3 +1,8 @@
+## 1.1.0
+
+- Upgrade Android configuration to support latest Gradle version.
+- Upgrade cocoapods to the latest version in iOS example app.
+
 ## 1.0.3
 
 - Added namespace in `android/build.gradle` to support new Gradle versions.
