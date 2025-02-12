@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
-import 'open_file_manager.dart';
+import '../open_file_manager.dart';
 import 'open_file_manager_platform_interface.dart';
 
 /// An implementation of [OpenFileManagerPlatform] that uses method channels.

@@ -1,6 +1,6 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-import 'open_file_manager.dart';
+import '../open_file_manager.dart';
 import 'open_file_manager_method_channel.dart';
 
 abstract class OpenFileManagerPlatform extends PlatformInterface {
