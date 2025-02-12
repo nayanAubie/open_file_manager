@@ -1,3 +1,7 @@
+## 1.1.1
+
+- Added doc comments in source files.
+
 ## 1.1.0
 
 - Upgrade Android configuration to support latest Gradle version.
