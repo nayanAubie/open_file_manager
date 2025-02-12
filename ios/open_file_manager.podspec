@@ -9,9 +9,9 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 A flutter plugin to open default file manager app
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'https://www.aubergine.co'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
+  s.author           = { 'Aubergine Solutions Pvt. Ltd.' => 'flutterdev@aubergine.co' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
