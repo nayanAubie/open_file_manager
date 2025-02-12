@@ -1,8 +1,9 @@
 library;
 
-import 'open_file_manager_platform_interface.dart';
+import 'open_file_manager.dart';
+import 'src/open_file_manager_platform_interface.dart';
 
-part 'config.dart';
+export 'src/config.dart';
 
 Future<bool> openFileManager({
   AndroidConfig? androidConfig,
