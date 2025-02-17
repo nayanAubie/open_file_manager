@@ -20,6 +20,7 @@ class MethodChannelOpenFileManager extends OpenFileManagerPlatform {
     final data = <String, dynamic>{};
     if (Platform.isAndroid && androidConfig != null) {
       data['folderType'] = androidConfig.folderType.name;
+      data['folderPath'] = androidConfig.folderPath;
     } else if (Platform.isIOS && iosConfig != null) {
       data['subFolderPath'] = iosConfig.subFolderPath;
     }

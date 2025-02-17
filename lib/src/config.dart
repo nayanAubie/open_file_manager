@@ -3,7 +3,10 @@ final class AndroidConfig {
   /// Type of folder to open.
   final FolderType folderType;
 
-  AndroidConfig({required this.folderType});
+  /// Folder path to open on folder type `other`
+  final String? folderPath;
+
+  AndroidConfig({required this.folderType, this.folderPath});
 }
 
 /// Configuration class for iOS platform.
@@ -20,5 +23,8 @@ enum FolderType {
   recent,
 
   /// Download folder
-  download
+  download,
+
+  /// Other folder
+  other,
 }

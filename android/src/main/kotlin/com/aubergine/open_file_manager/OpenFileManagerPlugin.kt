@@ -30,7 +30,11 @@ class OpenFileManagerPlugin : FlutterPlugin, MethodCallHandler {
         when (call.method) {
             "openFileManager" -> {
                 val args = call.arguments as HashMap<*, *>?
-                openFileManager(result, args?.get("folderType") as String?)
+                openFileManager(
+                    result,
+                    args?.get("folderType") as String?,
+                    args?.get("folderPath") as String?,
+                )
             }
 
             else -> {
@@ -43,7 +47,7 @@ class OpenFileManagerPlugin : FlutterPlugin, MethodCallHandler {
         channel.setMethodCallHandler(null)
     }
 
-    private fun openFileManager(result: Result, folderType: String?) {
+    private fun openFileManager(result: Result, folderType: String?, folderPath: String?) {
         try {
             if (folderType == null || folderType == "download") {
                 val downloadIntent = Intent(DownloadManager.ACTION_VIEW_DOWNLOADS)
@@ -57,9 +61,48 @@ class OpenFileManagerPlugin : FlutterPlugin, MethodCallHandler {
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
                 context.startActivity(intent)
                 result.success(true)
+            } else if (folderType == "other") {
+                val path = getPath(folderPath)
+                val encodedPath = Uri.encode(path)
+                val uri: Uri =
+                    Uri.parse("content://com.android.externalstorage.documents/document/$encodedPath")
+                val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+                intent.setDataAndType(uri, "*/*")
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                intent.putExtra("android.provider.extra.INITIAL_URI", uri)
+                context.startActivity(intent)
+                result.success(true)
             }
         } catch (e: Exception) {
             result.error("$e", "Unable to open the file manager", "")
+        }
+    }
+
+    private fun getPath(folderPath: String?): String {
+        if (folderPath == null || folderPath.isEmpty()) {
+            return "primary:recent"
+        }
+
+        val primaryPrefix = Environment.getExternalStorageDirectory().absolutePath
+        val regex = Regex("^/storage/([A-Za-z0-9-]+)/?(.*)")
+
+        return when {
+            folderPath.startsWith(primaryPrefix) -> {
+                "primary:${folderPath.removePrefix(primaryPrefix)}"
+            }
+
+            regex.matches(folderPath) -> {
+                val matchResult = regex.find(folderPath)
+                matchResult?.let {
+                    val storageId = it.groups[1]?.value
+                    val remainingPath = it.groups[2]?.value
+                    "$storageId:${remainingPath}"
+                } ?: "primary:$folderPath"
+            }
+
+            else -> {
+                "primary:$folderPath"
+            }
         }
     }
 }

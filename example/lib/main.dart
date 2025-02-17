@@ -15,9 +15,14 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final _androidFolderTypes = [FolderType.recent, FolderType.download];
+  final _androidFolderTypes = [
+    FolderType.recent,
+    FolderType.download,
+    FolderType.other,
+  ];
   var _selectedFolderType = FolderType.download;
   final _subFolderPathCtrl = TextEditingController();
+  final _otherFolderPathCtrl = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +56,21 @@ class _MyAppState extends State<MyApp> {
                   },
                 ),
               ),
+              if (_selectedFolderType == FolderType.other) ...[
+                const Text(
+                  'Write Android folder path',
+                  style: TextStyle(fontSize: 20),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: TextFormField(
+                    controller: _otherFolderPathCtrl,
+                    decoration: const InputDecoration(
+                      hintText: 'Folder path',
+                    ),
+                  ),
+                ),
+              ],
             ],
             if (Platform.isIOS) ...[
               const Text(
@@ -73,6 +93,7 @@ class _MyAppState extends State<MyApp> {
                 openFileManager(
                   androidConfig: AndroidConfig(
                     folderType: _selectedFolderType,
+                    folderPath: _otherFolderPathCtrl.text.trim(),
                   ),
                   iosConfig: IosConfig(
                     subFolderPath: _subFolderPathCtrl.text.trim(),

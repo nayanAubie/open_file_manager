@@ -1,14 +1,16 @@
 A flutter plugin to open the default file manager app.
 
 ## Support
-|             | Android | iOS     |
-|-------------|---------|---------|
-| **Support** | SDK 20+ | iOS 12+ |
+|             | Android     | iOS     |
+|-------------|-------------|---------|
+| **Support** | SDK 20+ *   | iOS 12+ |
+
+- The `Other` folder feature requires SDK 26 and above on Android.
 
 ## How it works?
 
 ### Android
-The `Android` app can open either `Recent` folder or `Download` folder.
+The `Android` app can open either `Recent` folder, `Download` folder, or `Other` folder.
 The plugin will show the available file manager apps in the bottom popup and you can select one app to open.
 That app will open with the given folder in selected app.
 
@@ -21,7 +23,7 @@ Also, you need to save at least one file to view your app's folder.
 <key>UISupportsDocumentBrowser</key>  
 <true/>
 ```
-  
+
 ## Usage
 
 It's a very simple to use. Just call the below method and add `config` if required.
@@ -43,6 +45,28 @@ openFileManager(
  - If `androidConfig` doesn't provided, Android app will open `Download` folder by default.
  - If `iosConfig` doesn't provided, iOS app will open app's document folder by default.
 
+### Open `Other` folder on Android
+
+To open `Other` folder on Android, you can use the following code snippet:
+
+```dart
+import 'package:open_file_manager/open_file_manager.dart';
+
+openFileManager(
+    androidConfig: AndroidConfig(
+        folderType: FolderType.other,
+        folderPath: 'Pictures/Screenshots',
+    ),
+);
+```
+
+The `folderPath` supports the following path formats:
+
+- `Pictures/Screenshots`
+- `/storage/emulated/0/Pictures/Screenshots`
+- `/storage/243F-4E12/Pictures/Screenshots`
+
+If `folderPath` is not provided or does not exist, the `Recent` folder will be opened.
 
 ## Preview
 
