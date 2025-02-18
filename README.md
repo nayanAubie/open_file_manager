@@ -88,9 +88,3 @@ The `folderPath` supports the following path formats:
 - `/storage/243F-4E12/Pictures/Screenshots`
 
 If `folderPath` does not exist, the `Recent` folder will be opened.
-
-## Preview
-
-https://github.com/nayanAubie/open_file_manager/assets/109264909/57ecd7be-a526-45d8-a138-7ca7dcd255ca
-
-https://github.com/nayanAubie/open_file_manager/assets/109264909/862bf858-49f1-4c4d-8c8e-22cbafb1d33c
