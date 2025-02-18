@@ -1,3 +1,16 @@
+## 2.0.0
+
+- Set minimum Dart SDK to `3.7.0`.
+- Upgrade Android platform to use `kts` script.
+
+**NEW FEATURES:**
+- Added support of opening specific folder in `Android`. `AndroidFolderType.other` should be used along with `folderPath` in `AndroidConfig`.
+
+**BREAKING CHANGES:**
+- The `FolderType` enum is renamed to `AndroidFolderType` for Android.
+- Removed the `required` keyword from `folderType` param in `AndroidConfig`; `AndroidFolderType.download` is now used as the default value.
+- `subFolderPath` param in `IosConfig` is renamed to `folderPath` and is now **optional**.
+
 ## 1.1.1
 
 - Added doc comments in source files.
