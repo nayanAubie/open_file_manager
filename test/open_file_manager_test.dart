@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:open_file_manager/open_file_manager.dart';
-import 'package:open_file_manager/src/open_file_manager_method_channel.dart';
-import 'package:open_file_manager/src/open_file_manager_platform_interface.dart';
+import 'package:open_file_manager/src/core/open_file_manager_method_channel.dart';
+import 'package:open_file_manager/src/core/open_file_manager_platform_interface.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockOpenFileManagerPlatform
