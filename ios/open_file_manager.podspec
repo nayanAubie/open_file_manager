@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'open_file_manager'
-  s.version          = '0.0.1'
+  s.version          = '0.1.1'
   s.summary          = 'A flutter plugin to open default file manager app'
   s.description      = <<-DESC
 A flutter plugin to open default file manager app
