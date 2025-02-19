@@ -11,8 +11,7 @@ class MockOpenFileManagerPlatform
   Future<bool> openFileManager({
     AndroidConfig? androidConfig,
     IosConfig? iosConfig,
-  }) =>
-      Future.value(true);
+  }) => Future.value(true);
 }
 
 void main() {
