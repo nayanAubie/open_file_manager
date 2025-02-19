@@ -1,3 +1,7 @@
+## 2.0.1
+
+- Fix source files using `dart format .`
+
 ## 2.0.0
 
 - Set minimum Dart SDK to `3.7.0`.
